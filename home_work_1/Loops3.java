@@ -10,7 +10,6 @@ public class Loops3 {
         System.out.printf("Имя: %s \n", namen);
         switch (namen){
             case "Вася":
-                //Можно ли сделать нечувствительность к регистру в данном случае ??
                 System.out.println("Привет!");
                 System.out.println("Я тебя так долго ждал.");
                 break;

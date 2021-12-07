@@ -1,7 +1,5 @@
 package home_work_1;
 
-import java.sql.SQLOutput;
-
 public class BitOperators1 {
     public static void main(String[] args) {
         int a = 42;
