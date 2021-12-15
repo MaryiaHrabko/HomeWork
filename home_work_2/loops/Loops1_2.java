@@ -13,7 +13,33 @@ import java.util.Scanner;
 public class Loops1_2 {
     public static void main(String[] args) {
         for (String number : args) {
-            int n = Integer.parseInt(args[0]);
+            int n;
+            while (true) {
+                try {
+                    n = Integer.parseInt(args[0]);
+                    break;
+                } catch (NumberFormatException e) {
+                    System.out.println("Вы ввели не целое число");
+                    return;
+                }
+            }
+            System.out.println("Введенное число: " + n);
+
+            String num = "", separator = "";
+            long result = 1;
+
+            while (n > 0) {
+                int partNumber = n % 10;
+                result *= partNumber;
+                num = partNumber + separator + num;
+                separator = " * ";
+                n /= 10;
+            }
+            System.out.println("Произведение чисел равно " + num + " = " + result);
+        }
+    }
+}
+
 //        Scanner console = new Scanner(System.in);
 
 //        if(console.hasNextInt()) {
@@ -25,17 +51,3 @@ public class Loops1_2 {
 //        } else {
 //            System.out.println("Введено не число");
 //        }
-            String num = "", separator = "";
-            long result = 1;
-
-            while (n > 0) {
-                int partNumber = n % 10;
-                result *= partNumber;
-                num =  partNumber + separator + num;
-                separator = " * ";
-                n /= 10;
-            }
-            System.out.println("Произведение чисел равно " + num + " = " + result);
-        }
-    }
-}
